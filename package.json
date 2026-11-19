@@ -3,9 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Live active conversation list with one-click DSH session navigation.",
+  "description": "A lightweight DeepSeek Harness Web UI plugin for live active-session discovery and one-click conversation navigation.",
+  "license": "MIT",
+  "author": "tk553521",
+  "repository": {"type": "git", "url": "git+https://github.com/tk553521/dsh-running-sessions.git"},
+  "homepage": "https://github.com/tk553521/dsh-running-sessions#readme",
+  "bugs": {"url": "https://github.com/tk553521/dsh-running-sessions/issues"},
+  "keywords": ["dsh", "deepseek-harness", "plugin", "sessions", "session-navigation"],
+  "scripts": {"check": "node --check index.js && node --check client.js", "test": "node --test test/client.test.cjs"},
   "exports": {".": "./index.js", "./client": "./client.js", "./locale/*.json": "./locale/*.json", "./icon": "./icon.svg"},
-  "files": ["index.js", "client.js", "cordis.patch.yml", "locale", "README.md", "icon.svg"],
+  "files": ["index.js", "client.js", "cordis.patch.yml", "locale", "README.md", "LICENSE", "icon.svg"],
   "engines": {"dsh": ">=0.2.2-rc.3 <0.3.0"},
   "dsh": {"bundle": {"patch": "./cordis.patch.yml"}, "client": {"platform": "web", "immediately": true, "inject": ["@deepseek-ai/dsh-client-ui-sidebar", "@deepseek-ai/dsh-client-ui-workspace", "@deepseek-ai/dsh-client-ui-session"]}}
 }
